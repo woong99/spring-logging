@@ -1,0 +1,24 @@
+Configuration:
+  Appenders:
+    Console:
+      name: console
+      target: SYSTEM_OUT
+      JsonLayout:
+        compact: true
+        eventEol: true
+        includeStacktrace: true
+        objectMessageAsJsonObject: true
+        properties: true
+
+  Loggers:
+    Logger:
+      name: org.springframework
+      level: info
+      additivity: false
+      AppenderRef:
+        - ref: console
+
+    Root:
+      level: info
+      AppenderRef:
+        - ref: console
